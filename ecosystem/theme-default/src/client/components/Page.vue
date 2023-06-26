@@ -4,7 +4,7 @@ import { onMounted, ref } from 'vue'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import RightMenu from '@theme/RightMenu.vue'
-import '../gitalk/gitalk.css'
+import '../styles/gitalk.css'
 
 defineSlots<{
   'top'?: (props: Record<never, never>) => any
