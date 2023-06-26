@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
         v-if="item.collapsible"
         class="arrow"
         :class="isOpen ? 'down' : 'right'"
-      />
+      >+</span>
     </p>
 
     <DropdownTransition v-if="item.children?.length">

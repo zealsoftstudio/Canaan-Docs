@@ -1,8 +1,8 @@
 <template>
-  <div class="right-menu-wrapper" v-if="headers.length">
+  <div class="right-menu-wrapper" v-if="headers.length" >
     <div class="right-menu-margin">
       <div class="right-menu-title">
-        {{ page.lang == 'zh-CN' ? '目录' : 'catalogue' }}
+        {{ page.lang == 'en-US' ? 'catalogue' : '目录' }}
       </div>
       <div class="right-menu-content">
         <div
@@ -37,7 +37,7 @@ onMounted(() => {
 })
 
 watch(
-  () => route,
+  route,
   () => {
     getHashText()
   }
@@ -49,7 +49,6 @@ const getHeadersData = () => {
     if (item.children.length) headers.value.push(...item.children)
   })
 }
-
 const getHashText = () => {
   hashText.value = decodeURIComponent(window.location.hash.slice(1))
 }
@@ -58,9 +57,10 @@ const getHashText = () => {
 
 <style lang='scss' scoped>
 .right-menu-wrapper {
-  width: 230px;
+  right: 0;
+  width: 220px;
   float: right;
-  margin-right: -(230px + 55px);
+  margin-right: -(200px + 200px);
   position: sticky;
   top: 50px;
   font-size: 0.8rem;
@@ -161,6 +161,31 @@ const getHashText = () => {
         }
       }
     }
+  }
+}
+@media only screen and (max-width: 1700px) {
+  .right-menu-wrapper {
+    margin-right: -(210px + 80px);
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .right-menu-wrapper {
+    margin-right: -(210px + 50px);
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .right-menu-wrapper {
+    margin-right: -(220px + 30px);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .right-menu-wrapper {
+    margin-right: -(220px + 40px);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .right-menu-wrapper {
+    display: none;
   }
 }
 </style>

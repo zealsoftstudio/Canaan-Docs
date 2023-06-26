@@ -58,9 +58,9 @@ export const useActiveHeaderLinks = ({
       headerLinks.some((link) => link.hash === anchor.hash)
     )
 
-    for (let i = 0; i < existedHeaderAnchors.length; i++) {
-      const anchor = existedHeaderAnchors[i]
-      const nextAnchor = existedHeaderAnchors[i + 1]
+    for (let i = 0; i < headerAnchors.length; i++) {
+      const anchor = headerAnchors[i]
+      const nextAnchor = headerAnchors[i + 1]
 
       // notice the `scrollTop` might not be exactly equal to `offsetTop` after clicking the anchor
       // so we add offset
@@ -88,9 +88,9 @@ export const useActiveHeaderLinks = ({
 
       // check if anchor is at the bottom of the page to keep hash consistent
       if (isAtPageBottom) {
-        for (let j = i + 1; j < existedHeaderAnchors.length; j++) {
+        for (let j = i + 1; j < headerAnchors.length; j++) {
           // if current route hash is below the active hash, do nothing
-          if (routeHash === decodeURIComponent(existedHeaderAnchors[j].hash)) {
+          if (routeHash === decodeURIComponent(headerAnchors[j].hash)) {
             return
           }
         }

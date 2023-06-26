@@ -120,11 +120,11 @@ export default defineUserConfig({
   // use plugins
   plugins: [
     docsearchPlugin({
-      appId: '34YFD9IUQ2',
-      apiKey: '9a9058b8655746634e01071411c366b8',
-      indexName: 'vuepress',
+      appId: '',
+      apiKey: '',
+      indexName: '',
       searchParameters: {
-        facetFilters: ['tags:v2'],
+        facetFilters: [''],
       },
       locales: {
         '/': {

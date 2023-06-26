@@ -66,8 +66,9 @@
 
   &.active:not(p.sidebar-heading) {
     font-weight: 600;
-    color: var(--c-text-accent);
-    border-left-color: var(--c-text-accent);
+    color: #fff;
+    background: var(--c-text-accent);
+    // border-left-color: var(--c-text-accent);
   }
 
   &.sidebar-heading {
@@ -87,11 +88,12 @@
 
   &.collapsible {
     cursor: pointer;
-
+    white-space: nowrap;
     .arrow {
       position: relative;
-      top: -0.12em;
+      // top: -0.12em;
       left: 0.5em;
+      top: 1px;
     }
   }
 
@@ -99,10 +101,11 @@
     font-size: 1em;
     font-weight: 400;
     display: inline-block;
-    margin: 0;
-    padding: 0.35rem 1rem 0.35rem 2rem;
+    margin: 0 10px 0 25px;
+    padding: 0.35rem 1rem 0.35rem 1rem;
     line-height: 1.4;
-    width: 100%;
+    width: 90%;
+    border-radius: 5px;
     box-sizing: border-box;
 
     & + .sidebar-item-children {
@@ -129,6 +132,7 @@ a.sidebar-item {
   cursor: pointer;
 
   &:hover {
-    color: var(--c-text-accent);
+    color: #fff;
+    background: var(--c-text-accent);
   }
 }
