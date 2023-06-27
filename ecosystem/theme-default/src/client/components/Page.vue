@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import Gitalk from 'gitalk'
-import { onMounted, ref } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import RightMenu from '@theme/RightMenu.vue'
+import { usePageData } from '@vuepress/client'
+import VueWaterMarker from 'vue-watermarker'
 import '../styles/gitalk.scss'
 
 defineSlots<{
@@ -13,14 +15,27 @@ defineSlots<{
   'content-bottom'?: (props: Record<never, never>) => any
 }>()
 
+const page = usePageData()
+
+const language = computed(() => {
+  if (page.value.lang == '中文简体') {
+    return 'zh-CN'
+  }
+  if (page.value.lang == 'en-US') {
+    return 'en-US'
+  }
+  return 'zh-CN'
+})
+
 const gitalk = new Gitalk({
-  clientID: '',
-  clientSecret: '',
-  repo: '',
-  owner: '',
-  admin: [''],
+  clientID: 'cea01f89df518b8563d1',
+  clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
+  repo: '100askTeam/Allwinner-Docs',
+  owner: 'codebug8',
+  admin: ['codebug'],
   id: location.pathname,
-  distractionFreeMode: false
+  distractionFreeMode: false,
+  language: language.value
 })
 
 onMounted(() => {
@@ -41,7 +56,7 @@ onMounted(() => {
 
       <slot name="content-bottom" />
     </div>
-
+    <VueWaterMarker width="250" :content="['100askTeam For Linux Training', '百问网专注于Linux/RTOS教育培训']" />
     <PageMeta />
 
     <PageNav />
@@ -51,7 +66,9 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 .page {
-  // max-width: 1200px;
+  .test {
+    height: 100px;
+  }
   #gitalk-container {
     padding-top: 50px;
   }

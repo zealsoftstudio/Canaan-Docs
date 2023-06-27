@@ -8,7 +8,7 @@ export const navbarZh: NavbarConfig = [
   },
   {
     text: '系统开发',
-    link: '/reference/cli.md'
+    link: '/advanced/'
   },
   {
     text: '驱动开发',

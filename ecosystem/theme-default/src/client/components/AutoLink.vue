@@ -112,7 +112,7 @@ watchEffect(() => {
 <template>
   <RouterLink
     v-if="isRouterLink"
-    :class="{ 'title-active': index == currentIndex, 'router-link-active': isActive}"
+    :class="{'router-link-active': isActive}"
     :to="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"

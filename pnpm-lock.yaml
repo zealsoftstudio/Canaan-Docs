@@ -516,6 +516,9 @@ importers:
       vue-router:
         specifier: ^4.2.0
         version: 4.2.0(vue@3.3.1)
+      vue-watermarker:
+        specifier: ^0.0.7
+        version: 0.0.7
 
   ecosystem/vuepress:
     dependencies:
@@ -10227,6 +10230,40 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.5.0
       vue: 3.3.1
+    dev: false
+
+  /vue-watermarker@0.0.2:
+    resolution: {integrity: sha512-jFPXPXMod4D+vNPv2Pj1f0QbWwo6MbcgpYOTwzI8w7hcD3E3Vno4ShNIFOZLxSOvrXDUsKvjASzsL6mCozoxlg==}
+    dependencies:
+      vue: 3.3.1
+    dev: false
+
+  /vue-watermarker@0.0.3:
+    resolution: {integrity: sha512-XglFGPi75gQUA9gw7dN1/YLyFi+LsKcAdxs9mncEx6D2Z7ZTj+WA/JcHlkXtNWcHqkvpxIj9tvO3Z7bP0bYMMw==}
+    dependencies:
+      vue: 3.3.1
+      vue-watermarker: 0.0.2
+    dev: false
+
+  /vue-watermarker@0.0.4:
+    resolution: {integrity: sha512-UcP626XBkuUOkKQ6wP32Hz5q1EsMGebAQ3BOscXKfAl4Ti02y5o10odkTNxdDCvQe9RlQ8+jeBTjlzlA+jfmcg==}
+    dependencies:
+      vue: 3.3.1
+      vue-watermarker: 0.0.3
+    dev: false
+
+  /vue-watermarker@0.0.5:
+    resolution: {integrity: sha512-YNOWg5f07ec6BKSvd488AMrAc42l2gs9G+V92npG7EcXGrOvKgelNNFpSOtEa9i7aE1gw1ycI9mbKyGx7eoOKg==}
+    dependencies:
+      vue: 3.3.1
+      vue-watermarker: 0.0.4
+    dev: false
+
+  /vue-watermarker@0.0.7:
+    resolution: {integrity: sha512-NqTCenKF/bwFxX/wzSppIaiWb+f++rUKV4ZSFP5n561XqlNhnGbyMB8usRSP9XMae5SZjbYv+F1VGeGTrc4Smg==}
+    dependencies:
+      vue: 3.3.1
+      vue-watermarker: 0.0.5
     dev: false
 
   /vue@3.3.1:

@@ -185,13 +185,13 @@ const changeTitle =(index) => {
 
 <template>
   <nav v-if="navbarLinks.length" class="navbar-items">
-    <div v-for="(item, index) in navbarLinks?.filter(link => link.text != 'GitHub')" :key="item.text" class="navbar-item">
+    <div v-for="(item, index) in navbarLinks" :key="item.text" class="navbar-item">
       <NavbarDropdown
-        v-if="item.children"
+        v-if="item?.children"
         :item="item"
         :class="isMobile ? 'mobile' : ''"
       />
-      <AutoLink v-if="clientWidth <= 900" :item="item" :index="index + 1" :currentTitle="currentTitle" @changeTitle="changeTitle" />
+      <AutoLink v-if="!item?.children && clientWidth <= 900" :item="item" :index="index + 1" :currentTitle="currentTitle" @changeTitle="changeTitle" />
     </div>
   </nav>
 </template>

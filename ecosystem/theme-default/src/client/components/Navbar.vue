@@ -4,7 +4,7 @@ import NavbarItems from '@theme/NavbarItems.vue'
 import LeftNavbarItems from '@theme/LeftNavbarItems.vue'
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue'
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import {
   DeviceType,
   useThemeLocaleData,
@@ -26,6 +26,13 @@ const navbar = ref<HTMLElement | null>(null)
 const navbarBrand = ref<HTMLElement | null>(null)
 
 const linksWrapperMaxWidth = ref(0)
+
+const clientWidth = ref()
+
+onMounted(() => {
+  clientWidth.value = document.body.clientWidth
+})
+
 const linksWrapperStyle = computed(() => {
   if (!linksWrapperMaxWidth.value) {
     return {}
@@ -69,7 +76,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 
     <span ref="navbarBrand">
       <NavbarBrand />
-      <LeftNavbarItems class="can-hide" />
+      <LeftNavbarItems v-if="clientWidth > 900" class="can-hide" />
     </span>
 
     <div class="navbar-items-wrapper" :style="linksWrapperStyle">

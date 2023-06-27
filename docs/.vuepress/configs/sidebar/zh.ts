@@ -24,13 +24,14 @@ export const sidebarZh: SidebarConfig = {
     {
       text: 'Advanced',
       children: [
-        '/advanced/architecture.md',
+        '/advanced/README.md',
         '/advanced/plugin.md',
         '/advanced/theme.md',
       ],
     },
     {
       text: 'Cookbook',
+      collapsible: true,
       children: [
         '/advanced/cookbook/README.md',
         '/advanced/cookbook/usage-of-client-config.md',

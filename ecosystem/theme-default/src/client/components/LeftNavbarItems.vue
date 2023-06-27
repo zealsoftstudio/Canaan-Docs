@@ -191,7 +191,7 @@ const changeTitle =(index) => {
         :item="item"
         :class="isMobile ? 'mobile' : ''"
       />
-      <AutoLink v-if="clientWidth > 900" :item="item" :index="index + 1" :currentTitle="currentTitle" @changeTitle="changeTitle" />
+      <AutoLink :item="item" :index="index + 1" :currentTitle="currentTitle" @changeTitle="changeTitle" />
     </div>
   </nav>
 </template>
