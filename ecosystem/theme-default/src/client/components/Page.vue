@@ -29,9 +29,9 @@ const language = computed(() => {
 const gitalk = new Gitalk({
   clientID: 'cea01f89df518b8563d1',
   clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
-  repo: '100askTeam/Allwinner-Docs',
-  owner: 'codebug8',
-  admin: ['codebug'],
+  repo: 'Allwinner-Docs',
+  owner: '100askTeam',
+  admin: ['codebug8'],
   id: location.pathname,
   distractionFreeMode: false,
   language: language.value

@@ -6,6 +6,7 @@ import Sidebar from '@theme/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+// import { Watermark } from '@pansy/watermark';
 import type { DefaultThemePageFrontmatter } from '../../shared/index.js'
 import {
   useScrollPromise,
@@ -27,6 +28,7 @@ defineSlots<{
   'page-content-bottom'?: (props: Record<never, never>) => any
 }>()
 
+// const watermark = new Watermark({ text:['100askTeam For Linux Training', '百问网专注于Linux/RTOS教育培训'], fontSize: 26, height: 120 })
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
@@ -76,6 +78,7 @@ onMounted(() => {
   unregisterRouterHook = router.afterEach(() => {
     toggleSidebar(false)
   })
+
 })
 onUnmounted(() => {
   unregisterRouterHook()
@@ -95,7 +98,8 @@ const onBeforeLeave = scrollPromise.pending
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+      <ClientOnly>
+        <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
         <template #before>
           <slot name="navbar-before" />
         </template>
@@ -103,12 +107,14 @@ const onBeforeLeave = scrollPromise.pending
           <slot name="navbar-after" />
         </template>
       </Navbar>
+      </ClientOnly>
     </slot>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <slot name="sidebar">
-      <Sidebar>
+      <ClientOnly>
+        <Sidebar>
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -116,6 +122,8 @@ const onBeforeLeave = scrollPromise.pending
           <slot name="sidebar-bottom" />
         </template>
       </Sidebar>
+      </ClientOnly>
+
     </slot>
 
     <slot name="page">
