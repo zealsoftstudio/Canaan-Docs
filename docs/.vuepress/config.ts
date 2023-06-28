@@ -178,6 +178,6 @@ export default defineUserConfig({
       componentsDir: path.resolve(__dirname, './components'),
     }),
     // only enable shiki plugin in production mode
-    isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
+    // isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
   ],
 })

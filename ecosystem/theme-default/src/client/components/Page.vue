@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import Gitalk from 'gitalk'
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed, ref, nextTick } from 'vue'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import RightMenu from '@theme/RightMenu.vue'
 import { usePageData } from '@vuepress/client'
-import VueWaterMarker from 'vue-watermarker'
 import '../styles/gitalk.scss'
 
 defineSlots<{
@@ -39,7 +38,9 @@ const gitalk = new Gitalk({
 })
 
 onMounted(() => {
+
   gitalk.render('gitalk-container')
+
 })
 
 </script>
@@ -52,11 +53,13 @@ onMounted(() => {
       <RightMenu />
       <slot name="content-top" />
 
-      <Content class="content-custom" />
+      <ClientOnly>
+        <Content class="content-custom" />
+      </ClientOnly>
 
       <slot name="content-bottom" />
     </div>
-    <VueWaterMarker width="250" :content="['100askTeam For Linux Training', '百问网专注于Linux/RTOS教育培训']" />
+
     <PageMeta />
 
     <PageNav />
