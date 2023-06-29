@@ -52,7 +52,7 @@ export default defineUserConfig({
     docsRepo: 'https://github.com/DongshanPI/Allwinner-Docs',
     docsBranch: 'main',
     editLink: true,
-    editLinkPattern: ':repo/-/edit/:branch/:path',
+    editLinkPattern: ':repo/edit/:branch/:path',
     sidebarDepth: 0,
     // theme-level locales config
     locales: {
