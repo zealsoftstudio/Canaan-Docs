@@ -17,9 +17,6 @@ defineSlots<{
 const page = usePageData()
 
 const language = computed(() => {
-  if (page.value.lang == '中文简体') {
-    return 'zh-CN'
-  }
   if (page.value.lang == 'en-US') {
     return 'en-US'
   }
@@ -27,22 +24,19 @@ const language = computed(() => {
 })
 
 const gitalk = new Gitalk({
-  clientID: 'cea01f89df518b8563d1',
-  clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
-  repo: 'Allwinner-Docs',
-  owner: '100askTeam',
-  admin: ['codebug8'],
-  id: location.pathname,
-  distractionFreeMode: false,
-  language: language.value
-})
+      clientID: 'cea01f89df518b8563d1',
+      clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
+      repo: 'Allwinner-Docs',
+      owner: '100askTeam',
+      admin: ['codebug8'],
+      id: location.pathname,
+      distractionFreeMode: false,
+      language: language.value,
+    })
 
 onMounted(() => {
-
   gitalk.render('gitalk-container')
-
 })
-
 </script>
 
 <template>
@@ -50,7 +44,10 @@ onMounted(() => {
     <slot name="top" />
 
     <div class="theme-default-content">
-      <RightMenu />
+      <ClientOnly>
+        <RightMenu />
+      </ClientOnly>
+
       <slot name="content-top" />
 
       <ClientOnly>
@@ -63,6 +60,7 @@ onMounted(() => {
     <PageMeta />
 
     <PageNav />
+
     <div id="gitalk-container" class="theme-default-content"></div>
     <slot name="bottom" />
   </main>

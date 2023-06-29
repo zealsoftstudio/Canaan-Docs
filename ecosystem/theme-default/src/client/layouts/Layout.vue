@@ -6,7 +6,6 @@ import Sidebar from '@theme/Sidebar.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-// import { Watermark } from '@pansy/watermark';
 import type { DefaultThemePageFrontmatter } from '../../shared/index.js'
 import {
   useScrollPromise,
@@ -28,7 +27,6 @@ defineSlots<{
   'page-content-bottom'?: (props: Record<never, never>) => any
 }>()
 
-// const watermark = new Watermark({ text:['100askTeam For Linux Training', '百问网专注于Linux/RTOS教育培训'], fontSize: 26, height: 120 })
 const page = usePageData()
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
 const themeLocale = useThemeLocaleData()
@@ -78,7 +76,12 @@ onMounted(() => {
   unregisterRouterHook = router.afterEach(() => {
     toggleSidebar(false)
   })
-
+  import('@pansy/watermark').then(module => {
+    const { Watermark } = module
+    const watermark = new Watermark({ text:['100askTeam For Linux Training', '百问网专注于Linux/RTOS教育培训'], fontSize: 26, height: 380 })
+  }).catch(err => {
+    console.log(err)
+  })
 })
 onUnmounted(() => {
   unregisterRouterHook()

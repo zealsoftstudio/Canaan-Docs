@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-import { h } from 'vue'
+import { h, onMounted } from 'vue'
 import { Badge, CodeGroup, CodeGroupItem } from './components/global/index.js'
 import {
   setupDarkMode,
@@ -47,6 +47,9 @@ export default defineClientConfig({
   setup() {
     setupDarkMode()
     setupSidebarItems()
+    onMounted(() => {
+      document.querySelector('#app')
+    })
   },
 
   layouts: {
