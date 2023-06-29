@@ -1,28 +1,30 @@
----
-home: false
-title: 首页
-heroImage: /images/hero.png
-actions:
-  - text: 快速上手
-    link: /zh/guide/getting-started.html
-    type: primary
-  - text: 项目简介
-    link: /zh/guide/
-    type: secondary
-features:
-  - title: 简洁至上
-    details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-  - title: Vue 驱动
-    details: 享受 Vue 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
-  - title: 高性能
-    details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
-  - title: 主题
-    details: 提供了一个开箱即用的默认主题。你也可以挑选一个社区主题，或者创建一个你自己的主题。
-  - title: 插件
-    details: 灵活的插件API，使得插件可以为你的站点提供许多即插即用的功能。
-  - title: 打包工具
-    details: 默认的打包工具是 Vite ，也同样支持 Webpack 。选一个你喜欢的来使用吧！
-footer: MIT Licensed | Copyright © 2018-present Evan You
----
+
 # 介绍
-  百问网全志系列站点文档。
+  此站点基于百问网推出的全志开发板编写的开发文档，主要用于大家学习参考使用，网站使用 GPLV3 & CC4.0 协议，转载请注明 allwinner-docs.100ask.net
+  此网站支持 
+  * 100ASK_T113-Pro开发板 
+  * D1-H东山哪吒STU开发板 
+  * DongshanPI-D1s开发板 
+  * 100ASK_V853-PRO开发板 
+  * 柚木PI-Lizard(V851s) 
+  所有页面都存放于GitHub仓库，大家如果发现错误 可以点击页面左上角的  编辑此页 提示文字自行编辑提交。
+
+因此站点存放在GitHub仓库，如果您不需要 进行页面评论/修改，可以访问 [allwinner-docs.100ask.org](allwinner-docs.100ask.org) 来加速您的阅读体验。
+
+## 阅读顺序
+### 0.嵌入式基础
+
+### 1.应用开发
+
+ 
+### 2.系统开发
+
+
+### 3.驱动开发
+
+
+### 4.专题应用
+
+
+
+ 建议大家按照 0--->1--->2--->3---> 4的顺序依次阅读。  

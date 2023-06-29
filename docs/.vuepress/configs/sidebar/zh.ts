@@ -10,7 +10,6 @@ export const sidebarZh: SidebarConfig = {
           '/Basic/LinuxShell/SystemManagement.md',
           '/Basic/LinuxShell/DocumentEditing.md',
           '/Basic/LinuxShell/DiskOperation.md',
-
         ],
       },
       {
@@ -38,45 +37,62 @@ export const sidebarZh: SidebarConfig = {
           '/Basic/GNU/01-Introduction.md',
         ],
       },
+      {
+        text: 'T113开发板使用',
+        collapsible: true,
+        children: [
+        '/Basic/100ASK_T113-PRO/01-BoardIntroduction.md',
+        '/Basic/100ASK_T113-PRO/02-SupportingResources.md',
+        '/Basic/100ASK_T113-PRO/03-QuickStart.md',
+        '/Basic/100ASK_T113-PRO/04-StudyPath.md',
+        '/Basic/100ASK_T113-PRO/05-1_RunHelloword.md',
+        '/Basic/100ASK_T113-PRO/05-2_RunHellowordDriver.md',
+        '/Basic/100ASK_T113-PRO/06-ConfigHostEnv.md',
+        '/Basic/100ASK_T113-PRO/07-Buildroot-SDK_DevelopmentGuide.md',
+        '/Basic/100ASK_T113-PRO/08-BuildBootloader.md',
+        '/Basic/100ASK_T113-PRO/09-BuildLinuxKernel.md',
+        '/Basic/100ASK_T113-PRO/10-1_BuildrootSupportWifiBluetooth.md',
+        '/Basic/100ASK_T113-PRO/10-BuildRootfs.md',
+        '/Basic/100ASK_T113-PRO/11-Tina-SDK_DevelopmentGuide.md',
+      ],
+     },
     ],
     '/Application/': [
-      {
-        text: '开发板使用',
-        children: [
-          '/Application/Board/100ASK_T113-PRO/01-BoardIntroduction.md',
-          '/Application/Board/100ASK_T113-PRO/02-SupportingResources.md',
-          '/Application/Board/100ASK_T113-PRO/03-QuickStart.md',
-          '/Application/Board/100ASK_T113-PRO/04-StudyPath.md',
-          '/Application/Board/100ASK_T113-PRO/05-1_RunHelloword.md',
-          '/Application/Board/100ASK_T113-PRO/05-2_RunHellowordDriver.md',
-          '/Application/Board/100ASK_T113-PRO/06-ConfigHostEnv.md',
-          '/Application/Board/100ASK_T113-PRO/07-Buildroot-SDK_DevelopmentGuide.md',
-          '/Application/Board/100ASK_T113-PRO/08-BuildBootloader.md',
-          '/Application/Board/100ASK_T113-PRO/09-BuildLinuxKernel.md',
-          '/Application/Board/100ASK_T113-PRO/10-1_BuildrootSupportWifiBluetooth.md',
-          '/Application/Board/100ASK_T113-PRO/10-BuildRootfs.md',
-          '/Application/Board/100ASK_T113-PRO/11-Tina-SDK_DevelopmentGuide.md',
-        ],
-      },
+
       {
         text: '显示开发',
         collapsible: true,
         children: [
-          '/Application/GraphicLibrariesAndApplications/LVGL8/01-Introduction.md',
+          '/Application/GraphicLibrariesAndApplications/01_FramebufferAPP.md',
+          '/Application/GraphicLibrariesAndApplications/02_ImageProcess.md',
         ],
       },
       {
         text: '网络开发',
         collapsible: true,
         children: [
-          '/Application/02_ImageProcess.md',
+          '/Application/06_NetworkProgram.md',
+          '/Application/16_MQTT.md',
         ],
       },
       {
         text: '模块开发',
         collapsible: true,
         children: [
-          '/Application/02_ImageProcess.md',
+          '/Application/09_GPIOProgram.md',
+          '/Application/11_PWM.md',
+          '/Application/12_IIC.md',
+          '/Application/10_RTC.md',
+          '/Application/14_Linux_Can.md',
+          '/Application/15_StoreDevice.md',
+        ],
+      },
+      {
+        text: '音视频开发',
+        collapsible: true,
+        children: [
+          '/Application/08_AudioBoard.md',
+          '/Application/07_CameraV4L2.md',
         ],
       },
     ],
@@ -146,10 +162,24 @@ export const sidebarZh: SidebarConfig = {
     ],
     '/Special/': [
       {
-        text: 'Buildroot-LTS专题',
+        text: 'Buildroot-LTS开发',
         collapsible: true,
         children: [
-          '/Special/02_ImageProcess.md',
+        '/Special/Buildroot_LTS-T113/01-BoardIntroduction.md',
+        '/Special/Buildroot_LTS-T113/02-SupportingResources.md',
+        '/Special/Buildroot_LTS-T113/03-1_FlashSystemSpiFlash.md',
+        '/Special/Buildroot_LTS-T113/03-2_FlashSystemTFCard.md',
+        '/Special/Buildroot_LTS-T113/03-QuickStart.md',
+        '/Special/Buildroot_LTS-T113/04-StudyPath.md',
+        '/Special/Buildroot_LTS-T113/05-1_RunHelloword.md',
+        '/Special/Buildroot_LTS-T113/05-2_RunHellowordDriver.md',
+        '/Special/Buildroot_LTS-T113/06-ConfigHostEnv.md',
+        '/Special/Buildroot_LTS-T113/07-Buildroot-SDK_DevelopmentGuide.md',
+        '/Special/Buildroot_LTS-T113/08-BuildBootloader.md',
+        '/Special/Buildroot_LTS-T113/09-BuildLinuxKernel.md',
+        '/Special/Buildroot_LTS-T113/10-1_BuildrootSupportWifiBluetooth.md',
+        '/Special/Buildroot_LTS-T113/10-BuildRootfs.md',
+        '/Special/Buildroot_LTS-T113/11-StartProcessAnalysis.md',
         ],
       },
       {
