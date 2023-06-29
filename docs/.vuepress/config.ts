@@ -47,8 +47,12 @@ export default defineUserConfig({
   // configure default theme
   theme: defaultTheme({
     logo: '/images/hero.png',
-    repo: 'vuepress/vuepress-next',
+    repo: '100askTeam/Allwinner-Docs',
     docsDir: 'docs',
+    docsRepo: 'https://github.com/100askTeam/Allwinner-Docs',
+    docsBranch: 'main',
+    editLink: true,
+    editLinkPattern: ':repo/-/edit/:branch/:path',
     sidebarDepth: 0,
     // theme-level locales config
     locales: {
