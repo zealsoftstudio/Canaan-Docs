@@ -47,9 +47,9 @@ export default defineUserConfig({
   // configure default theme
   theme: defaultTheme({
     logo: '/images/hero.png',
-    repo: '100askTeam/Allwinner-Docs',
+    repo: 'DongshanPI/Allwinner-Docs',
     docsDir: 'docs',
-    docsRepo: 'https://github.com/100askTeam/Allwinner-Docs',
+    docsRepo: 'https://github.com/DongshanPI/Allwinner-Docs',
     docsBranch: 'main',
     editLink: true,
     editLinkPattern: ':repo/-/edit/:branch/:path',
