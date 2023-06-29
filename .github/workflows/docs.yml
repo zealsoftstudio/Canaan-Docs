@@ -39,8 +39,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
-          repo: vuepress/vuepress.github.io
-          target_branch: main
+          repo: DongshanPI/Allwinner-Docs
+          target_branch: gh-pages
           build_dir: docs/.vuepress/dist
+          fqdn: allwinner-docs.100ask.net
         env:
           GH_PAT: ${{ secrets.GH_PAGES_TOKEN }}
