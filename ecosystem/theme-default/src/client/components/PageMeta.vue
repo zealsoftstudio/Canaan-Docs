@@ -96,7 +96,7 @@ const contributors = useContributors()
 <template>
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
-      <!-- <AutoLink class="meta-item-label" :item="editNavLink" /> -->
+      <AutoLink class="meta-item-label" :item="editNavLink" />
     </div>
     <div v-if="lastUpdated" class="meta-item last-updated">
       <span class="meta-item-label">{{ themeLocale.lastUpdatedText }}: </span>
