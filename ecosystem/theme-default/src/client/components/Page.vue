@@ -27,11 +27,11 @@ onMounted(() => {
   import('gitalk').then(module => {
     const Gitalk = module.default
     const gitalk = new Gitalk({
-      clientID: 'cea01f89df518b8563d1',
-      clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
+      clientID: '32cd9fbad6940f6bb8c7',
+      clientSecret: '4ef32c5e87dff8760f392a2bda21fc32148c9048',
       repo: 'Allwinner-Docs',
-      owner: '100askTeam',
-      admin: ['codebug8'],
+      owner: 'DongshanPI',
+      admin: ['DongshanPI'],
       id: location.pathname,
       distractionFreeMode: false,
       language: language.value,
