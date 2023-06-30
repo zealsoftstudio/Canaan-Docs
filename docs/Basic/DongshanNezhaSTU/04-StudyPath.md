@@ -1,4 +1,4 @@
-# 学习路线
+# 开发板使用指南
 
 ## 基础情况
 
@@ -15,7 +15,6 @@
 * 学习Git工具： https://www.bilibili.com/video/BV1CL4y1A7YG
 
 * 学习嵌入式Linux 基本知识 ： https://www.bilibili.com/video/BV1VN4y137Tf
-
 
 
 
