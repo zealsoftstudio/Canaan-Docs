@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Gitalk from 'gitalk'
 import { onMounted, computed, ref, nextTick } from 'vue'
 import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
@@ -23,19 +22,24 @@ const language = computed(() => {
   return 'zh-CN'
 })
 
-const gitalk = new Gitalk({
-      clientID: '32cd9fbad6940f6bb8c7',
-      clientSecret: '4ef32c5e87dff8760f392a2bda21fc32148c9048',
+
+onMounted(() => {
+  import('gitalk').then(module => {
+    const Gitalk = module.default
+    const gitalk = new Gitalk({
+      clientID: 'cea01f89df518b8563d1',
+      clientSecret: '5eaba65e3604b2d0b018f974b987b78a1084c919',
       repo: 'Allwinner-Docs',
-      owner: 'DongshanPI',
-      admin: ['DongshanPI'],
+      owner: '100askTeam',
+      admin: ['codebug8'],
       id: location.pathname,
       distractionFreeMode: false,
       language: language.value,
     })
-
-onMounted(() => {
-  gitalk.render('gitalk-container')
+    gitalk.render('gitalk-container')
+  }).catch(err => {
+    console.log(err)
+  })
 })
 </script>
 
@@ -58,7 +62,6 @@ onMounted(() => {
     </div>
 
     <PageMeta />
-
     <PageNav />
 
     <div id="gitalk-container" class="theme-default-content"></div>

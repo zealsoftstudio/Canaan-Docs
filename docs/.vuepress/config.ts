@@ -109,7 +109,7 @@ export default defineUserConfig({
       // only enable git plugin in production mode
       git: isProd,
       // use shiki plugin in production mode instead
-      prismjs: !isProd,
+      // prismjs: !isProd,
     },
   }),
 

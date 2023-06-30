@@ -130,7 +130,7 @@ const onBeforeLeave = scrollPromise.pending
     </slot>
 
     <slot name="page">
-      <Home v-if="frontmatter.home" />
+      <Home v-if="false" />
 
       <Transition
         v-else
