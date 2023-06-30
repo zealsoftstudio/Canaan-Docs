@@ -20,27 +20,17 @@ const props = defineProps({
   item: {
     type: Object as PropType<NavLink>,
     required: true,
-  },
-  index: {
-    type: Number,
-    required: true,
-  },
-  currentTitle: {
-    type: Number,
-    required: true,
   }
 })
 
-const currentIndex = ref()
 defineSlots<{
   before?: (props: Record<never, never>) => any
   after?: (props: Record<never, never>) => any
 }>()
 
-const emit = defineEmits(['changeTitle'])
 const route = useRoute()
 const site = useSiteData()
-const { item, index, currentTitle } = toRefs(props)
+const { item } = toRefs(props)
 
 // if the link has http protocol
 const hasHttpProtocol = computed(() => isLinkHttp(item.value.link))
@@ -99,14 +89,6 @@ const isActive = computed(() => {
   return isActiveInSubpath.value
 })
 
-const change = () => {
-  emit("changeTitle", index.value)
-}
-
-watchEffect(() => {
-  currentIndex.value = currentTitle.value
-})
-
 </script>
 
 <template>
@@ -116,7 +98,6 @@ watchEffect(() => {
     :to="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
-    @click="change"
   >
     <slot name="before" />
     {{ item.text }}

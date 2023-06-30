@@ -22,7 +22,6 @@ import { resolveRepoType } from '../utils/index.js'
 /**
  * Get navbar config of select language dropdown
  */
-const currentTitle = ref(sessionStorage.getItem('pageIndex') || 1)
 const clientWidth = ref()
 
 onMounted(() => {
@@ -176,22 +175,17 @@ useUpdateDeviceStatus(
   }
 )
 
-const changeTitle =(index) => {
-  if(!index) return
-  currentTitle.value = index
-  sessionStorage.setItem('pageIndex', index)
-}
 </script>
 
 <template>
   <nav v-if="navbarLinks.length" class="navbar-items">
-    <div v-for="(item, index) in navbarLinks?.filter(link => !link?.children && link.text != 'GitHub')" :key="item.text" class="navbar-item">
+    <div v-for="item in navbarLinks?.filter(link => !link?.children && link.text != 'GitHub')" :key="item.text" class="navbar-item">
       <NavbarDropdown
         v-if="item?.children"
         :item="item"
         :class="isMobile ? 'mobile' : ''"
       />
-      <AutoLink :item="item" :index="index + 1" :currentTitle="currentTitle" @changeTitle="changeTitle" />
+      <AutoLink :item="item" />
     </div>
   </nav>
 </template>
