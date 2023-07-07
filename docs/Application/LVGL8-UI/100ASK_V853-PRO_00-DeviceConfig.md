@@ -72,7 +72,7 @@
 
 ​	方式二：如果您没有虚拟机，也不想重新配置，可以下载使用我们已经配置好的虚拟机[ Allwinner-TinaSDK_100ASK_V853-PRO_LVGLDemo_Ubuntu-18.04_VM_V1.0.zip ](https://dongshanpi.cowtransfer.com/s/282461bbb3ac4d) 。（注意配置好的虚拟机占用的内存相对较大，下载会比较慢）下载链接： https://dongshanpi.cowtransfer.com/s/6842967fb9e541  
 
-![100ask-VMware-lvgl]https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-VMware-lvgl.gif)
+![100ask-VMware-lvgl](https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-VMware-lvgl.gif)
 
 注意：虚拟机的用户名为 **ubuntu**  密码为：**ubuntu**  **如果您使用我们提供的虚拟机镜像。里面已经包含工具链和LVGL DEMO示例。**
 
@@ -109,11 +109,11 @@ sudo apt-get install -y  libncurses5-dev   u-boot-tools
 
 ​	打开串口终端软件，这里我使用MobaXterm软件演示，选择开发板的串口终端号，可以在设备管理中查看
 
-![image-20230707143104904]https://tina.100ask.net/allwinner-docs/lvgl8-ui/image-20230707143104904.png)
+![image-20230707143104904](https://tina.100ask.net/allwinner-docs/lvgl8-ui/image-20230707143104904.png)
 
 这里我的串口设备号为`COM15`，所以在串口终端软件中也应该使用`COM15`，波特率为115200。操作步骤如下所示：
 
-![100ask-lvgl-serial-demo]https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-serial-demo.gif)
+![100ask-lvgl-serial-demo](https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-serial-demo.gif)
 
 上面操作以7寸RGB屏作为演示硬件测试指令，输入：
 
@@ -125,7 +125,7 @@ Turn on double buffering.
 
 输入后，显示屏上会显示如下如所示的LVGL示例：
 
-![]https://tina.100ask.net/allwinner-docs/lvgl8-ui/LVGL-Widgets-Demo.gif)
+![](https://tina.100ask.net/allwinner-docs/lvgl8-ui/LVGL-Widgets-Demo.gif)
 
 注意：LVGL示例会自动适配屏幕，可能和上面展示的比例不一致。
 
@@ -271,11 +271,11 @@ vi Makefile
 
 那么修改Makfile文件中的`CC`修改为gcc交叉编译工具链绝对路径。
 
-![image-20230707173444918]https://tina.100ask.net/allwinner-docs/lvgl8-ui/image-20230707173444918.png)
+![image-20230707173444918](https://tina.100ask.net/allwinner-docs/lvgl8-ui/image-20230707173444918.png)
 
 修改步骤如下所示：
 
-![100ask-lvgl-modifyMafile]https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-modifyMafile.gif)
+![100ask-lvgl-modifyMafile](https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-modifyMafile.gif)
 
 修改完成后，保存退出编辑界面。
 
@@ -297,7 +297,7 @@ export STAGING_DIR=/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-muslgnueab
 
 编译过程如下所示：
 
-![100ask-lvgl-makeAndBuild]https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-makeAndBuild.gif)
+![100ask-lvgl-makeAndBuild](https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-makeAndBuild.gif)
 
 等待编译完成后，会在当前目录下生成名称为`demo`的应用程序。
 
@@ -324,7 +324,7 @@ adb push demo /mnt/UDISK
 
 操作过程如下所示：
 
-![100ask-lvgl-adbPush]https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-adbPush.gif)
+![100ask-lvgl-adbPush](https://tina.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-adbPush.gif)
 
 
 
