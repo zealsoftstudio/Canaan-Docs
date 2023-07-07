@@ -105,10 +105,12 @@ export const sidebarZh: SidebarConfig = {
       ],
     },
     {
-      text: 'LVGL显示开发',
+      text: 'LVGL8-UI开发',
       collapsible: true,
       children: [
-        '/Application/GraphicLibrariesAndApplications/LVGL8/01-Introduction.md',
+        '/Application/LVGL8-UI/100ASK_T113-PRO_00-DeviceConfig.md',
+        '/Application/LVGL8-UI/100ASK_T113-PRO_01-Introduction.md',
+        '/Application/LVGL8-UI/100ASK_V853-PRO_00-DeviceConfig.md',
       ],
     },
     {
@@ -202,6 +204,13 @@ export const sidebarZh: SidebarConfig = {
       text: 'T113-PRO Buildroot-LTS',
       collapsible: true,
       children: [
+        '/Special/Buildroot_LTS-T113/01-BoardIntroduction.md',
+        '/Special/Buildroot_LTS-T113/02-SupportingResources.md',
+        '/Special/Buildroot_LTS-T113/03-1_FlashSystemSpiFlash.md',
+        '/Special/Buildroot_LTS-T113/03-2_FlashSystemTFCard.md',
+        '/Special/Buildroot_LTS-T113/03-QuickStart.md',
+        '/Special/Buildroot_LTS-T113/04-StudyPath.md',
+        '/Special/Buildroot_LTS-T113/05-1_RunHelloword.md',
         '/Special/Buildroot_LTS-T113/05-2_RunHellowordDriver.md',
         '/Special/Buildroot_LTS-T113/06-ConfigHostEnv.md',
         '/Special/Buildroot_LTS-T113/07-Buildroot-SDK_DevelopmentGuide.md',
