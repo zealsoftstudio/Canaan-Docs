@@ -59,11 +59,10 @@
 
 - LVGL示例源码：[allwinner-tinasdk_lvgl8_demo_V1.0.zip 点击下载](https://dongshanpi.cowtransfer.com/s/4b36b0b0a03349)
 
-  压缩包名称为：
 
 ​	获取完成后，解压源码压缩包，可以看到README.md文件和对应的源码文件。README.md文件里面包含镜像MD5校验码和版本说明，客户可以通过校验码确认文件的完整性和镜像版本的功能说明。
 
-
+注意：解压缩 后需要使用的 文件 后缀 为 .tar.gz 
 
 ## 开始使用
 
@@ -222,13 +221,14 @@ ubuntu@ubuntu1804:~/lvgl_work$ tree -L 2
 │   ├── mouse_cursor_icon.c
 │   └── README.md
 └── toolchain
-    ├── 100ask_t113-pro_arm-openwrt-linux-eabi-glibc_sysroot_v1.0.tar.gz 
+    ├── 100ask_t113-pro_arm-openwrt-linux-eabi-glibc_sysroot_v1.0.tar.gz
     ├── arm-openwrt-linux-eabi-musl
     ├── gcc-6.4-2017.11-x86_64_arm-openwrt-linux-eabi-musl.tar.gz
     ├── sysroot
     └── toolchain
 
 7 directories, 11 files
+
 ```
 
 其中`lv_port_linux_frame_buffer`为LVGL Demo示例源码；`toolchain`中包含gcc交叉编译工具链和sysroot依赖文件。
@@ -240,16 +240,16 @@ ubuntu@ubuntu1804:~/lvgl_work$ tree -L 2
 进入gcc工具链文件目录的bin目录中查看交叉编译工具链是否存在
 
 ```
-ubuntu@ubuntu1804:~/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/bin$ ls arm-openwrt-linux-muslgnueabi-gcc
+ubuntu@ubuntu1804:~/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin$ ls arm-openwrt-linux-muslgnueabi-gcc
 arm-openwrt-linux-muslgnueabi-gcc
-ubuntu@ubuntu1804:~/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/bin$ pwd
-/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/bin
+ubuntu@ubuntu1804:~/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin$ pwd
+/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin
 ```
 
 `arm-openwrt-linux-muslgnueabi-gcc`交叉编译工具链绝对路径为：
 
 ```
-/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/bin/arm-openwrt-linux-muslgnueabi-gcc
+/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin/arm-openwrt-linux-muslgnueabi-gcc
 ```
 
 
@@ -271,16 +271,16 @@ vi Makefile
 修改Makefile文件中`CC`为刚刚前面确认的交叉编译工具链路径，例如我刚刚确认的gcc交叉编译工具链绝对路径为：
 
 ```
-/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/bin/arm-openwrt-linux-muslgnueabi-gcc
+/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin/arm-openwrt-linux-muslgnueabi-gcc
 ```
 
 那么修改Makfile文件中的`CC`修改为gcc交叉编译工具链绝对路径。
 
-![image-20230707173444918](http://photos.100ask.net/allwinner-docs/lvgl8-ui/image-20230707173444918.png)
+![image-20230708140533761](http://photos.100ask.net/allwinner-docs/lvgl8-ui/image-20230708140533761.png)
 
 修改步骤如下所示：
 
-![100ask-lvgl-modifyMafile](http://photos.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-modifyMafile.gif)
+![100ask-lvgl-modifyMakefile](http://photos.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-modifyMakefile.gif)
 
 修改完成后，保存退出编辑界面。
 
@@ -293,16 +293,16 @@ export ARCH=arm
 export CROSS_COMPILE=arm-openwrt-linux-muslgnueabi-
 export PATH=$PATH:/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/bin/
 export SYSROOT_DIR=/home/ubuntu/lvgl_work/toolchain/sysroot/
-export STAGING_DIR=/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-muslgnueabi/
+export STAGING_DIR=/home/ubuntu/lvgl_work/toolchain/arm-openwrt-linux-eabi-musl/
 ```
 
 注意：如果您是自己配置的虚拟机的请修改为对应的路径,，如果使用我们提供的方式二  直接 复制 粘贴到  ubuntu18.04终端执行即可。
 
 
 
-编译过程如下所示：
+配置完成后，输入`make`即可开始编译。编译过程如下所示：
 
-![100ask-lvgl-makeAndBuild](http://photos.100ask.net/allwinner-docs/lvgl8-ui/100ask-lvgl-makeAndBuild.gif)
+![100ask-t113-lvgl-makeAndBuild](http://photos.100ask.net/allwinner-docs/lvgl8-ui/100ask-t113-lvgl-makeAndBuild.gif)
 
 等待编译完成后，会在当前目录下生成名称为`demo`的应用程序。
 
@@ -336,9 +336,11 @@ adb push demo /mnt/UDISK
 传输完成后，切换到开发板串口终端软件，进入终端，输入 如下命令： 即可看到屏幕运行 自己编译新的demo程序。
 
 ```
-root@TinaLinux:/# cd /mnt/UDISK/
-root@TinaLinux:~# ./demo 0
-wh=480x800, vwh=480x1600, bpp=32, rotated=0
+root@TinaLinux:/# cd /mnt/UDISK
+root@TinaLinux:/mnt/UDISK# ls
+demo
+root@TinaLinux:/mnt/UDISK# ./demo 0
+wh=1024x600, vwh=1024x1200, bpp=32, rotated=0
 ```
 
 输入完成后，即可实现镜像中内置的lvgl demo演示示例。
