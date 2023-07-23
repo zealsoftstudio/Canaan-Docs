@@ -4,23 +4,23 @@ import { version } from '../meta.js'
 export const navbarZh: NavbarConfig = [
   {
     text: '嵌入式基础',
-    link: '/'
+    link: '/',
   },
   {
     text: 'AI应用开发',
-    link: '/Application/'
+    link: '/Application/',
   },
   {
     text: '组件库开发',
-    link: '/Devicedriver/'
+    link: '/Devicedriver/',
   },
   {
     text: '系统开发',
-    link: '/System/'
+    link: '/System/',
   },
   {
     text: '专题应用',
-    link: '/Special/'
+    link: '/Special/',
   },
   {
     text: `嘉楠系列`,

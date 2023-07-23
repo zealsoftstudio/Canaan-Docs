@@ -73,7 +73,6 @@ export const sidebarZh: SidebarConfig = {
         '/Application/MPPApplicationDevelopment/03-MPPDevelopmentGuide.md',
       ],
     },
-
   ],
   '/System/': [
     {
