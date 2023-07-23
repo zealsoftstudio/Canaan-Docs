@@ -7,30 +7,30 @@ export const navbarZh: NavbarConfig = [
     link: '/'
   },
   {
-    text: '应用开发',
+    text: 'AI应用开发',
     link: '/Application/'
+  },
+  {
+    text: '组件库开发',
+    link: '/Devicedriver/'
   },
   {
     text: '系统开发',
     link: '/System/'
   },
   {
-    text: '驱动开发',
-    link: '/Devicedriver/'
-  },
-  {
     text: '专题应用',
     link: '/Special/'
   },
   {
-    text: `全志系列`,
+    text: `嘉楠系列`,
     children: [
       {
-        text: 'T113-Pro开发板',
+        text: 'DongshanPI-Vision开发板',
         link: '/advanced/cookbook/',
       },
       {
-        text: 'V853开发板',
+        text: '100ask_Canaan-k510_Devkit',
         link: '/advanced/cookbook/',
       },
       {

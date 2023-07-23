@@ -36,7 +36,7 @@ export default defineUserConfig({
     '/en/': {
       lang: 'en-US',
       title: '100ask',
-      description: 'Vue-powered Static Site Generator',
+      description: '100ASKTeam For Linux Tranning!',
     },
   },
 
@@ -47,9 +47,9 @@ export default defineUserConfig({
   // configure default theme
   theme: defaultTheme({
     logo: '/images/hero.png',
-    repo: 'DongshanPI/Allwinner-Docs',
+    repo: 'DongshanPI/Canaan-Docs',
     docsDir: 'docs',
-    docsRepo: 'https://github.com/100askTeam/Allwinner-Docs',
+    docsRepo: 'https://github.com/100askTeam/Canaan-Docs',
     docsBranch: 'main',
     editLink: true,
     editLinkPattern: ':repo/edit/:branch/:path',
