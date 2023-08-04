@@ -34,30 +34,37 @@ export const sidebarZh: SidebarConfig = {
       collapsible: true,
       children: ['/Basic/GNU/01-Introduction.md'],
     },
+
+  ],
+  '/Basic/': [
     {
       text: 'DongshanPI-Vision使用',
-      collapsible: true,
       children: [
         '/Basic/DongshanPI-Vision/01-BoardIntroduction.md',
         '/Basic/DongshanPI-Vision/02-QuickStart.md',
         '/Basic/DongshanPI-Vision/03-BoardNetwork.md',
         '/Basic/DongshanPI-Vision/04-UpdateSystem.md',
+        '/Basic/DongshanPI-Vision/05-SSHTransferFiles.md',
+        '/Basic/DongshanPI-Vision/06-App_Development_Guide.md',
       ],
     },
   ],
   '/Application/': [
     {
       text: 'AI人工智能应用开发',
-      collapsible: true,
       children: [
         '/Application/AIApplicationDevelopment-Canaan/01-Demonstrate_AI_APP.md',
-        '/Application/AIApplicationDevelopment-Canaan/02-AI_App_Development_Guide.md',
-        '/Application/AIApplicationDevelopment-Canaan/03-nncase_Developer_Guides.md',
+        '/Application/AIApplicationDevelopment-Canaan/02-BuildDevelopmentEnv.md',
+        '/Application/AIApplicationDevelopment-Canaan/03-AIApplicationCompilation.md',
+        '/Application/AIApplicationDevelopment-Canaan/04-AI_App_Development_Guide.md',
+        '/Application/AIApplicationDevelopment-Canaan/05-nncase_Developer_Guides.md',
+        '/Application/AIApplicationDevelopment-Canaan/06-BuildYolov5Env.md',
+        '/Application/AIApplicationDevelopment-Canaan/07-EndsideDeploymentYolov5.md',
+        '/Application/AIApplicationDevelopment-Canaan/08-DeployCustomYolov5Model.md',
       ],
     },
     {
       text: '多媒体框架开发',
-      collapsible: true,
       children: [
         '/Application/MPPApplicationDevelopment-Canaan/01-Multimedia_Developer_Guides.md',
         '/Application/MPPApplicationDevelopment-Canaan/02-Drm_Developer_Guides.md',
@@ -66,11 +73,7 @@ export const sidebarZh: SidebarConfig = {
         '/Application/MPPApplicationDevelopment-Canaan/05-ISP_Tuning_Tool_Guides.md',
       ],
     },
-    {
-      text: '更多应用开发',
-      collapsible: true,
-      children: ['/Application/OtherAPP-Canaan/01-App_Development_Guide.md'],
-    },
+
   ],
   '/System/': [
     {
@@ -93,9 +96,8 @@ export const sidebarZh: SidebarConfig = {
     },
     {
       text: 'Canann-SDK开发',
-      collapsible: true,
       children: [
-        '/System/DongshanPI-Vision/01-SDK_Build_and_Burn_Guide.md',
+        '/System/DongshanPI-Vision/01-SystemDevelopmentGuide.md',
         '/System/DongshanPI-Vision/02-Linux_Kernel_Driver_Developer_Guides.md',
         '/System/DongshanPI-Vision/03-V4l2_Developer_Guides.md',
         '/System/DongshanPI-Vision/04-V4l2_Sensor_Developer_Guides.md',
@@ -103,53 +105,6 @@ export const sidebarZh: SidebarConfig = {
         '/System/DongshanPI-Vision/06-U-Boot_Developer_Guides.md',
         '/System/DongshanPI-Vision/07-System_memory_map.md',
         '/System/DongshanPI-Vision/08-SDK_DSP_CORE_Guide.md',
-      ],
-    },
-  ],
-  '/Devicedriver/': [
-    {
-      text: 'LVGL8-UI开发',
-      collapsible: true,
-      children: [
-        '/Application/LVGL8-UI/100ASK_T113-PRO_00-DeviceConfig.md',
-        '/Application/LVGL8-UI/100ASK_T113-PRO_01-Introduction.md',
-        '/Application/LVGL8-UI/100ASK_V853-PRO_00-DeviceConfig.md',
-      ],
-    },
-    {
-      text: 'FB显示开发',
-      collapsible: true,
-      children: [
-        '/Application/GraphicLibrariesAndApplications/01_FramebufferAPP.md',
-        '/Application/GraphicLibrariesAndApplications/02_ImageProcess.md',
-      ],
-    },
-    {
-      text: '网络设备开发',
-      collapsible: true,
-      children: [
-        '/Application/06_NetworkProgram.md',
-        '/Application/16_MQTT.md',
-      ],
-    },
-    {
-      text: '模块设备开发',
-      collapsible: true,
-      children: [
-        '/Application/09_GPIOProgram.md',
-        '/Application/11_PWM.md',
-        '/Application/12_IIC.md',
-        '/Application/10_RTC.md',
-        '/Application/14_Linux_Can.md',
-        '/Application/15_StoreDevice.md',
-      ],
-    },
-    {
-      text: '音视频开发',
-      collapsible: true,
-      children: [
-        '/Application/08_AudioBoard.md',
-        '/Application/07_CameraV4L2.md',
       ],
     },
   ],

@@ -22,6 +22,8 @@
 
 本文档将以320x320分辨率的YOLOV5s的onnx模型为示例，介绍K510 AI应用整个流程的编写与应用。
 
+> 开始前请注意：此文档为官方文档，所有资料可访问：[https://github.com/kendryte/k510_buildroot](https://github.com/kendryte/k510_buildroot)
+
 ## 2 模型准备
 
 用于推理的YOLOV5s的onnx模型位于/docs/utils/AI_Application/aidemo_sdk/models/onnx子目录(如果没有文件请下载 [models](https://github.com/kendryte/k510_docs/releases/download/v1.5/models.tar.gz) 并解压)，静态图片位于/docs/utils/AI_Application/aidemo_sdk/examples/python_inference_on_PC/data子目录，脚本位于/docs/utils/AI_Application/aidemo_sdk/examples/python_inference_on_PC子目录。
@@ -53,7 +55,7 @@ optional arguments:
 
 ## 3 模型生成
 
-模型生成依赖于nncase compiler，关于nncase compiler的具体使用规则可参考[K510_nncase_Developer_Guides.md](./K510_nncase_Developer_Guides.md)。生成YOLOV5s的kmodel的脚本位于/docs/utils/AI_Application/aidemo_sdk/scripts子目录。
+模型生成依赖于nncase compiler，关于nncase compiler的具体使用规则可参考K510_nncase_Developer_Guides.md。生成YOLOV5s的kmodel的脚本位于/docs/utils/AI_Application/aidemo_sdk/scripts子目录。
 
 按照脚本命令提示，运行gen_yolov5s_320_with_sigmoid_bf16_with_preprocess_output_nhwc.py，可生成相应的kmodel。
 
@@ -83,7 +85,7 @@ compile_options.input_range = [0, 255]
 
 ## 4 模型验证
 
-模型验证依赖于nncase simulator，关于nncase simulator的具体使用规则可参考[K510_nncase_Developer_Guides.md](./K510_nncase_Developer_Guides.md)。验证YOLOV5s的kmodel脚本位于/docs/utils/AI_Application/aidemo_sdk/scripts子目录。
+模型验证依赖于nncase simulator，关于nncase simulator的具体使用规则可参考《nncase开发指南》。验证YOLOV5s的kmodel脚本位于/docs/utils/AI_Application/aidemo_sdk/scripts子目录。
 
 按照脚本命令提示，运行simu_yolov5s_320_with_sigmoid_bf16_with_preprocess_output_nhwc.py，可验证相应的kmodel是否生成正确。
 
@@ -106,7 +108,7 @@ output 2 cosine similarity : 0.9999019503593445
 
 ## 5 编写AI 应用程序
 
-模型验证依赖于nncase runtime，关于nncase runtime的具体使用规则可参考[K510_nncase_Developer_Guides.md](./K510_nncase_Developer_Guides.md)。AI应用程序参考 `k510_buildroot/package/ai/code/object_detect`。首先需要创建目标检测实例，并为kmodel输入输出分配空间。
+模型验证依赖于nncase runtime，关于nncase runtime的具体使用规则可参考《nncase开发指南》。AI应用程序参考 `k510_buildroot/package/ai/code/object_detect`。首先需要创建目标检测实例，并为kmodel输入输出分配空间。
 
 ```c++
 objectDetect od(obj_thresh, nms_thresh, net_len, {valid_width, valid_height});
