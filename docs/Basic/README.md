@@ -1,3 +1,4 @@
 
-# 介绍
-  百问网全志系列站点文档。
+  DongshanPI-Vision开发板是百问网针对AI应用开发设计出来的一个RSIC-V架构的AI开发板，主要用于学习使用嘉楠的K510芯片进行Linux项目开发和嵌入式AI应用开发等用途。DongshanPI-Vision开发板采用嘉楠公司出品的勘智K510芯片，该芯片是一款全开源的高精度AI推理芯片，双核RSIC-V 64位CPU，最高800MHz，完整支持Linux和RSIC-V扩展。拥有2.5TFLOPS算力，支持INT8和BF16双数据类型，高精度推理计算。
+
+  ![boardfrontView-01](http://photos.100ask.net/canaan-docs/dongshanpi-vision_function_01.jpg)
