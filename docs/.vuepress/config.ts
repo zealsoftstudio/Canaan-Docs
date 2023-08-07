@@ -123,9 +123,6 @@ export default defineUserConfig({
 
   // use plugins
   plugins: [
-    googleAnalyticsPlugin({
-      id: 'G-FPCF7L7XJH',
-    }),
     docsearchPlugin({
       appId: '',
       apiKey: '',
@@ -179,7 +176,7 @@ export default defineUserConfig({
     }),
     googleAnalyticsPlugin({
       // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? 'G-FPCF7L7XJH',
+      id: process.env.DOCS_GA_ID ?? 'G-9G66J300EP',
       debug: true,
     }),
     registerComponentsPlugin({
