@@ -30,7 +30,7 @@ onMounted(() => {
     const gitalk = new Gitalk({
       clientID: '32cd9fbad6940f6bb8c7',
       clientSecret: '4ef32c5e87dff8760f392a2bda21fc32148c9048',
-      repo: 'Allwinner-Docs',
+      repo: 'Canaan-Docs',
       owner: 'DongshanPI',
       admin: ['DongshanPI'],
       id: location.pathname,

@@ -179,7 +179,8 @@ export default defineUserConfig({
     }),
     googleAnalyticsPlugin({
       // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? '',
+      id: process.env.DOCS_GA_ID ?? 'G-FPCF7L7XJH',
+      debug: true,
     }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
