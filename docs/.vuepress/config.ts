@@ -176,7 +176,7 @@ export default defineUserConfig({
     }),
     googleAnalyticsPlugin({
       // we have multiple deployments, which would use different id
-      id: process.env.DOCS_GA_ID ?? 'G-9G66J300EP',
+      id: 'G-9G66J300EP',
       debug: true,
     }),
     registerComponentsPlugin({
