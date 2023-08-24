@@ -93,9 +93,9 @@ docs                  package
 
 ## 2.获取交叉编译工具链
 
-​	交叉编译工具链下载地址：	
+​	交叉编译工具链下载地址：[https://dongshanpi.cowtransfer.com/s/bc101fb198e746](https://dongshanpi.cowtransfer.com/s/bc101fb198e746)
 
-​	下载交叉编译工具链压缩包nds64le-elf-mculib-v5d.txz，下载完成后将压缩包传入`DongshanPI-Vision/br2-canaan-k510/toolchain`目录下，如下所示：
+​	下载交叉编译工具链压缩包[nds64le-elf-mculib-v5d.txz](https://dongshanpi.cowtransfer.com/s/bc101fb198e746)，下载完成后将压缩包传入`DongshanPI-Vision/br2-canaan-k510/toolchain`目录下，如下所示：
 
 ```
 ubuntu@ubuntu2004:~/DongshanPI-Vision/br2-canaan-k510/toolchain$ ls
@@ -185,7 +185,7 @@ dongshanpi-vision_defconfig/build 目录下是所有被编译对象的源码，�
 
 注： xxx是版本号。后面章节引用kernle，bbl和uboot的路径时，xxx均表示版本号。
 
-> **需要特别注意：**当make clean 的时候，dongshanpi-vision_defconfig文件夹下所有内容将被删除。所以，如果需要修改kernel、bbl或者uboot代码，不要直接在build目录下修改，可以参考第5章内容，使用override source的方式。
+> **需要特别注意**：当make clean 的时候，dongshanpi-vision_defconfig文件夹下所有内容将被删除。所以，如果需要修改kernel、bbl或者uboot代码，不要直接在build目录下修改，可以参考第4章内容，使用override source的方式。
 
 ### 3.2 配置Buildroot
 

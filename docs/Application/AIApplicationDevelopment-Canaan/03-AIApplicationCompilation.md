@@ -3,7 +3,7 @@
 **PC主机端要求：**
 
 - 显卡，显存4GB以上（无显卡，纯CPU训练较慢）
-- 内存16GB以上
+- 内存4GB以上
 - 硬盘100GB以上（建议200GB以上）
 - 系统：Windows10/11系统
 
@@ -18,7 +18,7 @@
 
 - VMware虚拟机工具
 - Ubuntu20.04系统
-- AI应用程序源码：[https://e.coding.net/weidongshan/k510-app/DongshanPI-Vision_AI-APP.git](https://e.coding.net/weidongshan/k510-app/DongshanPI-Vision_AI-APP.git)
+- AI应用程序源码：[https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git](https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git)
 - 交叉编译工具链：[https://dongshanpi.cowtransfer.com/s/55562905c0e245](https://dongshanpi.cowtransfer.com/s/55562905c0e245)
 
 
@@ -29,23 +29,33 @@
 
 ## 1.获取AI应用源码
 
-DongshanPI-Vision的AI应用源码：[https://e.coding.net/weidongshan/k510-app/DongshanPI-Vision_AI-APP.git](https://e.coding.net/weidongshan/k510-app/DongshanPI-Vision_AI-APP.git)
+DongshanPI-Vision的AI应用源码：[https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git](https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git)
 
 在您的用户目录下在克隆下载AI应用源码，输入：
 
 ```
-git clone https://e.coding.net/weidongshan/k510-app/DongshanPI-Vision_AI-APP.git
+git clone https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git
 ```
 
 执行结果如下所示：
 
-![image-20230802130716053](http://photos.100ask.net/canaan-docs/image-20230802130716053.png)
+```
+ubuntu@ubuntu2004:~$ git clone https://e.coding.net/weidongshan/dongsahnpi-vision/100ask_base-aiApplication-demo.git
+Cloning into '100ask_base-aiApplication-demo'...
+remote: Enumerating objects: 679, done.
+remote: Counting objects: 100% (679/679), done.
+remote: Compressing objects: 100% (231/231), done.
+remote: Total 679 (delta 423), reused 676 (delta 423), pack-reused 0
+Receiving objects: 100% (679/679), 5.79 MiB | 10.43 MiB/s, done.
+Resolving deltas: 100% (423/423), done.
+Updating files: 100% (700/700), done.
+```
 
-执行完成后可以在当前目录下查看到`DongshanPI-Vision_AI-APP`文件夹，进入该文件夹
+执行完成后可以在当前目录下查看到`100ask_base-aiApplication-demo`文件夹，进入该文件夹
 
 ```
-ubuntu@ubuntu2004:~$ cd DongshanPI-Vision_AI-APP/
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP$ ls
+ubuntu@ubuntu2004:~$ cd 100ask_base-aiApplication-demo/
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo$ ls
 code  README.md
 ```
 
@@ -55,18 +65,18 @@ code  README.md
 
 ## 2.获取交叉编译工具链
 
-DongshanPI-Vision的交叉编译工具链：[https://dongshanpi.cowtransfer.com/s/55562905c0e245](https://dongshanpi.cowtransfer.com/s/55562905c0e245)
+DongshanPI-Vision的交叉编译工具链：[riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz](https://dongshanpi.cowtransfer.com/s/55562905c0e245)
 
-您需要通过上述链接下载我们提供的[riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz](https://dongshanpi.cowtransfer.com/s/55562905c0e245)sysroot工具链，该文件包含riscv的sysroot工具链、依赖库等文件。
+您需要通过上述链接下载我们提供的[交叉编译工具链](https://dongshanpi.cowtransfer.com/s/55562905c0e245)，该压缩包文件包含riscv的sysroot工具链、依赖库等文件。
 
-下载完成后将sysroot工具链压缩包传入虚拟机Ubuntu系统中的`DongshanPI-Vision_AI-APP`目录下，如下所示：
+下载完成后将交叉编译工具链压缩包传入虚拟机Ubuntu系统中的`100ask_base-aiApplication-demo`目录下，如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP$ ls
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo$ ls
 code  README.md  riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz
 ```
 
-将sysroot工具链压缩包，解压到`DongshanPI-Vision_AI-APP`目录下，输入
+将交叉编译工具链压缩包，解压到`100ask_base-aiApplication-demo`目录下，输入
 
 ```
 tar -xzvf riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz 
@@ -75,7 +85,7 @@ tar -xzvf riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz
 解压完成后，可以看到有`riscv64-buildroot-linux-gnu_sdk-buildroot`文件夹，如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP$ ls
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo$ ls
 code       riscv64-buildroot-linux-gnu_sdk-buildroot
 README.md  riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz
 ```
@@ -84,11 +94,11 @@ README.md  riscv64-buildroot-linux-gnu_sdk-buildroot.tar.gz
 
 ## 3.编译AI应用程序
 
-​	进入源码目录`DongshanPI-Vision_AI-APP/code`目录下，如下所示：
+​	进入源码目录`100ask_base-aiApplication-demo/code`目录下，如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP$ cd code/
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ ls
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo$ cd code/
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code$ ls
 build.sh             head_pose_estimation     person_detect
 cmake                imx219_0.conf            retinaface_mb_320
 CMakeFiles           imx219_1080x1920_0.conf  self_learning
@@ -107,17 +117,17 @@ hand_image_classify  openpose                 video_object_detect_640x480.conf
 在编译前需要先配置环境变量，我们已经提前编写好了配置脚本`build.sh`，您只需要手动激活环境变量输入`source build.sh`，如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ source build.sh 
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code$ source build.sh 
 -- The C compiler identification is GNU 7.3.0
 -- The CXX compiler identification is GNU 7.3.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /home/ubuntu/DongshanPI-Vision_AI-APP/riscv64-buildroot-linux-gnu_sdk-buildroot/bin/riscv64-linux-gcc - skipped
+-- Check for working C compiler: /home/ubuntu/100ask_base-aiApplication-demo/riscv64-buildroot-linux-gnu_sdk-buildroot/bin/riscv64-linux-gcc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /home/ubuntu/DongshanPI-Vision_AI-APP/riscv64-buildroot-linux-gnu_sdk-buildroot/bin/riscv64-linux-g++ - skipped
+-- Check for working CXX compiler: /home/ubuntu/100ask_base-aiApplication-demo/riscv64-buildroot-linux-gnu_sdk-buildroot/bin/riscv64-linux-g++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
@@ -135,13 +145,13 @@ CMake Warning:
     BUILD_TESTS
 
 
--- Build files have been written to: /home/ubuntu/DongshanPI-Vision_AI-APP/code
+-- Build files have been written to: /home/ubuntu/100ask_base-aiApplication-demo/code
 ```
 
 配置完成后，在终端输入`make`，开始编译应用程序，如下所示：
 
 ```
-buntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ make
+buntu@ubuntu2004:~/100ask_base-aiApplication-demo/code$ make
 [  0%] Building CXX object face_expression/CMakeFiles/face_expression.dir/main.cc.o
 [  0%] Building CXX object openpose/CMakeFiles/openpose.dir/main.cc.o
 [ 12%] Building CXX object simple_pose/CMakeFiles/simple_pose.dir/main.cc.o
@@ -165,7 +175,7 @@ buntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ make
 编译完成还需要输入`make install`，将编译完成的应用程序和执行脚本保存在`tmp/`目录下。
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ make install 
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code$ make install 
 [  7%] Built target face_detect
 [ 14%] Built target face_landmarks
 [ 19%] Built target object_detect
@@ -183,8 +193,8 @@ ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ make install
 [100%] Built target retinaface_mb_320
 Install the project...
 -- Install configuration: "Release"
--- Installing: /home/ubuntu/DongshanPI-Vision_AI-APP/code/tmp/app/ai/exe/imx219_1080x1920_0.conf
--- Installing: /home/ubuntu/DongshanPI-Vision_AI-APP/code/tmp/app/ai/exe/imx219_0.conf
+-- Installing: /home/ubuntu/100ask_base-aiApplication-demo/code/tmp/app/ai/exe/imx219_1080x1920_0.conf
+-- Installing: /home/ubuntu/100ask_base-aiApplication-demo/code/tmp/app/ai/exe/imx219_0.conf
 ...
 ```
 
@@ -193,24 +203,24 @@ Install the project...
 执行完成后，可以进入tmp目录下查看生成的应用程序。如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code$ cd tmp/
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code/tmp$ ls
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code$ cd tmp/
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code/tmp$ ls
 app
 ```
 
 可以看到生成有app目录，进入`app`，有我们刚刚编译的ai应用程序目录
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code/tmp$ cd app/
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code/tmp/app$ ls
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code/tmp$ cd app/
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code/tmp/app$ ls
 ai
 ```
 
 进入ai应用目录查看文件，如下所示：
 
 ```
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code/tmp/app/ai$ cd
-ubuntu@ubuntu2004:~/DongshanPI-Vision_AI-APP/code/tmp/app/ai$ tree
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code/tmp/app/ai$ cd
+ubuntu@ubuntu2004:~/100ask_base-aiApplication-demo/code/tmp/app/ai$ tree
 .
 ├── exe
 │   ├── face_alignment

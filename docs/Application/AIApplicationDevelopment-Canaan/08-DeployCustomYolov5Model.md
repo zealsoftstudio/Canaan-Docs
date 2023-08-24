@@ -31,7 +31,7 @@
 
 ### 1.1 下载标注工具
 
-​	如果需要训练自定义模型，肯定需要手动去标注图像，获取图像中对应的label位置信息。这里我们使用LabelImg，它是用Python编写的，图形界面使用QT，是灵活的开源数据标注工具。数据标注工具下载地址：[点击下载](https://github.com/tzutalin/labelImg/files/2638199/windows_v1.8.1.zip)
+​	如果需要训练自定义模型，肯定需要手动去标注图像，获取图像中对应的label位置信息。这里我们使用LabelImg，它是用Python编写的，图形界面使用QT，是灵活的开源数据标注工具。数据标注工具下载地址：[LabelImg-windows_v1.8.1.zip](https://github.com/tzutalin/labelImg/files/2638199/windows_v1.8.1.zip)
 
 下载完成后解压压缩包，进入`windows_v1.8.1`文件夹下双击打开`labelImg.exe`文件。
 
@@ -45,7 +45,7 @@
 
 
 
-**注意：**由于LabelImg会预先提供一些类供您使用，需要手动删除这些类，使得您可以标注自己的数据集。步骤如下所示：
+**注意**：由于LabelImg会预先提供一些类供您使用，需要手动删除这些类，使得您可以标注自己的数据集。步骤如下所示：
 
 在`windows_v1.8.1`文件夹进入data目录中，可以看到有一个名为`predefined_classes.txt`文件，里面预先定义了一些类，如果里面定义的类您不需要可将该文件里的全部类删除，操作过程如下所示：
 
