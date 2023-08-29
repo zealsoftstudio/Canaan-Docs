@@ -12,7 +12,10 @@
 
 - VMware虚拟机工具：[VMware下载中心](https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html)
 
-- Ubuntu镜像：[DongshanPI-Vision虚拟机-Ubuntu20.04.zip](https://dongshanpi.cowtransfer.com/s/386fc0c0310946) 
+- Ubuntu镜像，可通过以下两种方法获取：
+  - 奶牛快传：[DongshanPI-Vision虚拟机-Ubuntu20.04.zip](https://dongshanpi.cowtransfer.com/s/386fc0c0310946) 
+  - 百度网盘：[DongshanPI-Vision虚拟机-Ubuntu20.04.zip](https://pan.baidu.com/s/1LbkblZvlbsXiJWH-mzFsWw?pwd=blgh)
+
 
 
 
