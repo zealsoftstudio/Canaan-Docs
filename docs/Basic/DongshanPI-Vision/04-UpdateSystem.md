@@ -68,7 +68,7 @@
 
 点击`Replace Driver`替换驱动程序，此时会弹出一个确认窗口，点击`是`。
 
-![image-20230721153035517](http://photos.100ask.net/canaan-docs/image-20230721153035517.png)
+![image-20230831091224026](http://photos.100ask.net/canaan-docs/image-20230831091224026.png)
 
 安装完成后会弹出以下窗口点击`close`
 
