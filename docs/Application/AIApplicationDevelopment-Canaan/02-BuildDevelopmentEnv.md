@@ -78,7 +78,7 @@ pip show nncase
 
 ## 3.测试环境
 
-​	虚拟机中内置有模型转换程序，这里我们使用该程序测试Ubuntu的环境是否配置完成。该程序位于`/home/ubuntu/yolov5s-modelTransformation`目录下。在终端中输入以下命令进入该目录：
+​	虚拟机中内置有[模型转换程序](https://dongshanpi.cowtransfer.com/s/b70eced85b0d46)，这里我们使用该程序测试Ubuntu的环境是否配置完成。该程序位于`/home/ubuntu/yolov5s-modelTransformation`目录下。在终端中输入以下命令进入该目录：
 
 ```
 cd /home/ubuntu/yolov5s-modelTransformation
