@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-455869f6","path":"/Basic/100ASK_V853-PRO/01-HardwareResources.html","title":"硬件资源简介","lang":"中文简体","frontmatter":{},"headers":[],"git":{"updatedTime":1688123617000,"contributors":[{"name":"codebug8","email":"livelwh@outlook.com","commits":1}]},"filePathRelative":"Basic/100ASK_V853-PRO/01-HardwareResources.md"}');export{e as data};

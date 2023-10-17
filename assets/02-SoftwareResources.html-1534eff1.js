@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-8ef30b58","path":"/Basic/100ASK_V853-PRO/02-SoftwareResources.html","title":"软件资源简介","lang":"中文简体","frontmatter":{},"headers":[],"git":{"updatedTime":1688123617000,"contributors":[{"name":"codebug8","email":"livelwh@outlook.com","commits":1}]},"filePathRelative":"Basic/100ASK_V853-PRO/02-SoftwareResources.md"}');export{e as data};

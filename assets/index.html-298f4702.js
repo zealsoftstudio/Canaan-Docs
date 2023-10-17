@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-50993b78","path":"/Devicedriver/","title":"Linux常用组件库开发","lang":"中文简体","frontmatter":{},"headers":[],"git":{"updatedTime":1691133834000,"contributors":[{"name":"codebug8","email":"livelwh@outlook.com","commits":1},{"name":"zhfmyb","email":"zhfmyb@163.com","commits":1}]},"filePathRelative":"Devicedriver/readme.md"}');export{e as data};
