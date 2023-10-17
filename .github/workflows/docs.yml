@@ -52,7 +52,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
-          repo: DongshanPI/Canaan-Docs
+          repo: 100askTeam/Canaan-Docs
           target_branch: gh-pages
           build_dir: docs/.vuepress/dist
           fqdn: canaan-docs.100ask.org
