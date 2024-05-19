@@ -94,7 +94,21 @@ udhcpc -i  wlan0
 
 获取完成后即为成功连接互联网。
 
+### 1.4 开机自动获得WiFi IP地址
+使用vi修改/etc/init.d/rc.sysinit文件，在文件中添加udhcpc -i  wlan0一句。这样每次启动开发板都会自动获取WiFi路由器分配的IP地址。
+```
+ifconfig wlan0 up
+if [ $? -eq 0 ];then
+        if [ -f /first_run_flag_file ];then
+                echo "ctrl_interface=/var/run/wpa_supplicant" > /etc/wpa_supplicant.conf
+                echo "update_config=1" >> /etc/wpa_supplicant.conf
+                echo "ap_scan=1" >> /etc/wpa_supplicant.conf
+        fi
 
+        wpa_supplicant -D nl80211 -i wlan0 -c /etc/wpa_supplicant.conf -B
+        udhcpc -i  wlan0
+fi
+```
 
 ## 2.测试网络
 
